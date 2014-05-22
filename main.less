@@ -1,0 +1,217 @@
+/* Downloads
+ ***************/
+@import url(http://fonts.googleapis.com/css?family=Quicksand:300,400);
+
+
+/* Reset
+ ***************/
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+
+body {
+	color: hsl(355,0%,40%);
+	font-family: "Quicksand", "Open Sans", sans-serif;
+	min-width: 750px;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+	a { text-decoration: none; }
+}
+
+
+a {
+	color: inherit;
+	transition: color 0.2s;
+	
+	&:hover {
+		color: hsl(355,60%,40%) !important;
+	}
+}
+
+
+p { padding-bottom: 1em; }
+
+
+/* clearfix */
+.group:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+
+.active {
+	color: hsl(355,60%,40%);
+}
+
+
+/* Top and Bottom
+ ***************/
+
+#main-header, #main-footer {
+	background: hsl(355,60%,4%);
+	height: 100%;
+	width: 100%;
+	font-weight: 300;
+	overflow-x: hidden;
+	
+	ul {
+		list-style: none;
+	}
+}
+
+
+/* Header
+ ***************/
+
+#main-header {
+	font-size: 35px;
+
+	&::after {
+		content: "";
+		display: block;
+		/*background: url(http://www.wallpapersfunny.com/wallpapers/ian-mckellen-9-funny-wallpaper-1024x768.jpg) right;*/
+		background: url(Ian.jpg) right;
+		background-repeat: no-repeat;
+		height: 768px;
+	}
+
+	&> h1 {
+		position: absolute;
+		max-width: 400px;
+		top: 75px;
+		left: 75px;
+		font-weight: 300;
+		font-size: 3em;
+	}
+	
+	nav {
+		position: fixed;
+		top: 0;
+		right: 0;
+		padding: 10px;
+		text-align: right;
+	}
+
+	@media screen and (max-width: 1200px) {
+		h1 {
+			position: fixed;
+			top: 10px;
+			left: 10px;
+			z-index: 1;
+			font-size: 25px;
+			font-weight: 400;
+		}
+
+		nav {
+			background: hsla(355,60%,4%,0.9);
+			font-size: 25px;
+			width: 100%;
+
+			ul {
+				float: right;
+
+				li {
+					float: left;
+					padding-left: 1em;
+				}
+			}
+		}
+	}
+}
+
+
+/* Footer
+ ***************/
+
+#main-footer {
+	.footer-content {
+		max-width: 60em;
+		padding: 1em;
+		margin: auto;
+	}
+
+	h1 {
+		font-size: 1.5em;
+		font-weight: bold;
+	}
+
+	nav {
+		section {
+			float: left;
+			margin: 1em 5em 4em 0;
+
+			&> h1 {
+				font-size: 1.17em;
+				font-weight: bold;
+			}
+		}
+	}
+
+	small {
+		display: block;
+
+		address {
+			display: inline;
+		}
+	}
+}
+
+
+/* Content
+ ***************/
+
+#content {
+	padding: 50px 1em;
+
+	h1, h2, h3, h4, h5, h6 {
+		color: hsl(355,60%,10%);
+	}
+
+	&> section {
+		margin: auto;
+		padding: 1em 0 4em;
+		max-width: 60em;
+
+		&> h1 {
+			padding-bottom: 1em;
+			font-size: 1.5em;
+			font-weight: bold;
+		}
+
+		&> article {
+			&> h1 {
+				padding-bottom: 0;
+				font-size: 1.17em;
+				font-weight: bold;
+			}
+
+			details {
+				padding: 1em;
+
+				&:not([open]) {
+					cursor: pointer;
+
+					&> summary {
+						&::after {
+							content: "Read More";
+							display: inline;
+							color: hsl(355,60%,40%);
+						}
+					}
+				}
+
+				&> summary {
+					&::-webkit-details-marker {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}
